@@ -1,0 +1,53 @@
+🧠 Quick Summary of Commands
+cd "C:/Users/YourName/Desktop/your_folder"
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/codeverse-amol/python-practice.git
+git push -u origin main
+
+
+
+Remove all files from your GitHub repository in two main ways:
+
+🧭 Method 1: Using Git Commands (from your local machine)
+1️⃣ Go to your local repo
+cd path/to/your/repository
+
+2️⃣ Remove all files
+git rm -r *
+This deletes all tracked files from both your local folder and Git tracking.
+
+If you also want to remove hidden files (like .gitignore, etc.):
+git rm -r .* --ignore-unmatch
+
+3️⃣ Commit the deletion
+git commit -m "Remove all files from repository"
+
+4️⃣ Push the changes to GitHub
+git push origin main
+
+✅ This will delete all files from your GitHub repository — the repo will still exist, but it’ll be empty.
+
+
+
+🌐 Method 2: Using GitHub Website (directly online)
+
+Go to your repository on GitHub.com
+Click on each file or folder you want to delete
+Click the trash can 🗑️ icon (top-right corner) → then “Commit changes”
+Repeat for each file/folder (tedious for many files)
+If you want to delete everything at once, it’s better to use Git commands instead.
+
+
+⚙️ Optional: If you want to delete only from GitHub, not local
+
+If you want to keep your local files but clear the remote repo:
+
+git rm -r --cached .
+git commit -m "Remove all files from GitHub only"
+git push origin main
+
+
+This untracks the files — they remain locally but are removed from GitHub.
