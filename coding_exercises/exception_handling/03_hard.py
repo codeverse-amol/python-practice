@@ -28,14 +28,16 @@
 #   finally that prints “Calculation Done”
 
 
-'''
 # simple calculator:
-print("\n#---Simple calculator---#\n")
+print("\n#---Simple Calculator---#\n")
 def calculator():
     while True:
         try:
             num1 = int(input("Enter first number: "))
             num2 = int(input("Enter second number: "))
+            print()
+            print("Enter + for Addition\nEnter - for Subtraction\nEnter * for multiplication\nEnter / for division")
+            print()
 
             operator = input("Enter operator: ")
             print("=====================")
@@ -51,23 +53,24 @@ def calculator():
                 case "/":
                     print(f"Division: {num1 / num2}")
                 case _:
-                    print("Invalid Operator!!")
-                    print("=====================")
-                    break
+                    raise ValueError("Invalid Operator!")
                 
 
         except ZeroDivisionError:
             print("Denominator should not be zero.")
             print("=====================")
             break
+
         except ValueError:
-            print()
-            print("Invalid Input!")
+            print("Invalid input or operator!")
             print("=====================")
             break
 
-        else:
-            print("Calculation Done.")
+        except Exception as e:
+            print("Something went wrong:", e)
+
+        finally:
+            print("Calculation Completed")
             print("=====================")
             break
 
@@ -85,7 +88,7 @@ while True:
         print("Quitting..")
         break
 
-'''
+
 #------------------------------------------------------------------------------
 # 2.Write a function login(username, password) that:
 #   Raises custom exception if username != "admin"
@@ -150,4 +153,4 @@ except FileNotFoundError:
     print("File not found.")
 except Exception as e:
     print("Error: ", e)
-'''
+''' 
