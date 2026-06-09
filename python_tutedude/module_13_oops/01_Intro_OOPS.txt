@@ -1,0 +1,188 @@
+🟦 OOP in Python (Object-Oriented Programming)
+
+OOP = A way of writing programs using objects and classes to make code organized, reusable, structured.
+
+✅ 1. Class
+
+A class is a blueprint or template.
+
+Example:
+A “Car” class describes what properties a car will have (company, model, color) and what it can do (start, stop).
+
+✔ Syntax:
+class Car:
+    pass
+
+✅ 2. Object
+
+Object = Real object created from the class blueprint.
+
+Example:
+
+car1 = Car()
+car2 = Car()
+
+✅ 3. init() — Constructor
+
+This runs automatically whenever an object is created.
+
+Used to initialize variables.
+
+✔ Example:
+class Car:
+    def __init__(self, company, model):
+        self.company = company
+        self.model = model
+
+car1 = Car("BMW", "X5")
+car2 = Car("Audi", "Q7")
+
+print(car1.company, car1.model)
+
+🟥 What is self?
+
+self always refers to current object.
+
+Example:
+
+self.company → car1.company (for car1)
+self.company → car2.company (for car2)
+
+✅ 4. Methods
+
+Functions inside a class are called methods.
+
+Example:
+class Car:
+    def start(self):
+        print("Car Started")
+
+c = Car()
+c.start()
+
+🟩 Combining all:
+class Student:
+    def __init__(self, name, marks):
+        self.name = name
+        self.marks = marks
+
+    def show(self):
+        print(f"Name: {self.name}, Marks: {self.marks}")
+
+s1 = Student("Amol", 88)
+s1.show()
+
+🟦 5. Types of Methods
+1️⃣ Instance Methods
+
+Work on object variables → use self.
+
+2️⃣ Class Methods
+
+Work on class variables → use @classmethod and cls.
+
+3️⃣ Static Methods
+
+General utility → no self, no cls.
+
+Example:
+
+class Demo:
+    college = "MIT"
+
+    @classmethod
+    def get_college(cls):
+        return cls.college
+
+    @staticmethod
+    def add(a, b):
+        return a + b
+
+🟧 6. Inheritance
+
+One class taking properties/methods from another.
+
+✔ Example:
+class A:
+    def fun1(self):
+        print("A class")
+
+class B(A):   # inherits A
+    def fun2(self):
+        print("B class")
+
+🟥 Types of Inheritance:
+
+Single
+
+Multiple
+
+Multilevel
+
+Hierarchical
+
+Hybrid
+(If you want, I’ll show examples for all.)
+
+🟨 7. Polymorphism
+
+Same function name → different behavior.
+
+Examples:
+
+Method overriding
+
+Duck typing
+
+Operator overloading
+
+Example (overriding):
+class A:
+    def show(self):
+        print("A show")
+
+class B(A):
+    def show(self):
+        print("B show")
+
+🟪 8. Encapsulation
+
+Hiding internal details.
+
+Python uses:
+
+_var → protected
+
+__var → private
+
+Example:
+
+class Student:
+    def __init__(self):
+        self._age = 20
+        self.__marks = 90
+
+🟫 9. Abstraction
+
+Hiding complex logic.
+Using ABC (Abstract Base Class).
+
+🟩 Real-world Mini Example
+
+(Student Management System)
+
+class Student:
+    def __init__(self, name, marks):
+        self.name = name
+        self.marks = marks
+
+    def get_grade(self):
+        if self.marks >= 90:
+            return "A"
+        elif self.marks >= 75:
+            return "B"
+        else:
+            return "C"
+
+s1 = Student("Amol", 92)
+print(s1.get_grade())
